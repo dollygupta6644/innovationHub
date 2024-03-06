@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jira Board</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="content-wrapper">
+    <div class="sidebar" id="sidebar">
+        <div class="up">
+            <div class="Menu sidebar-item">
+                <h2><i class="fab fa-jira"></i>  InnovationHub</h2>
+                <div class="menu-items">
+                    <h4>Design Team</h4>
+                    <h4>Marketing Team</h4>
+                    <h4>Development Team</h4>
+                    <h4>Create a Team</h4>
+                </div>
+            </div>
+            <div class="sidebar-item active" onclick="toggleSubitems('item1')">
+              <div class="sidebar-heading"><i class="fas fa-folder"></i> Products</div>
+              <div class="sidebar-subitems" id="item1">
+                <div>Roadmap</div>
+                <div>Feedback</div>
+                <div>Performance</div>
+                <div>Team</div>
+                <div>Analytics</div>
+              </div>
+            </div>
+            <div class="sidebar-item" onclick="toggleSubitems('item2')">
+              <span class="sidebar-heading"><i class="fas fa-folder"></i> Sales</span>
+              <div class="sidebar-subitems" id="item2">
+                <div>Feedback</div>
+                <div>Analytics</div>
+                <div>Client</div>
+              </div>
+            </div>
+            <div class="sidebar-item" onclick="toggleSubitems('item3')">
+              <span class="sidebar-heading"><i class="fas fa-folder"></i> Office</span>
+              <div class="sidebar-subitems" id="item3">
+                <div>Contact</div>
+                <div>Email</div>
+                <div>Address</div>
+              </div>
+            </div>
+        </div>
+        <div class="below">
+            <div class="sidebar-item">
+                <h4>Invite Teammates</h4>
+                <h4>Help and First Steps</h4>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="top-bar">
+            <h2>Products</h2>
+            <div class="search-box">
+              <input type="text" placeholder="Search for...">
+              <i class="fas fa-comments chat-icon"></i>
+              <i class="fas fa-cog settings-icon"></i>
+            </div>
+        </div>
+        <div class="sub-menu">
+            <div class="top-left">
+                <p class="sub-items left">All Brands</p>
+                <p class="sub-items left">Desk</p>
+                <p class="sub-items left">Tags</p>
+                <p class="sub-items left">Sort</p>
+                <p class="sub-items left">Filter</p>
+            </div>
+            <div class="top-right">
+                <p class="sub-items right">Meeting</p>
+                <p class="sub-items right">Import/Export</p>
+            </div>
+        </div>
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th><i class="fas fa-building"></i> Brand</th>
+            <th><i class="fas fa-info-circle"></i> Description</th>
+            <th><i class="fas fa-users"></i> Members</th>
+            <th><i class="fas fa-tags"></i> Categories</th>
+            <th><i class="fas fa-tag"></i> Tags</th>
+            <th><i class="far fa-calendar-alt"></i> Next Meeting</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="brand"><input type="checkbox" class="brand-checkbox" onchange="toggleBackgroundColor(this)"><i class="fa-brands fa-apple"></i> Apple</td>
+            <td>Develop a app</td>
+            <td class="member">Dolly</td>
+            <td class="Technology">Technology</td>
+            <td>#Apple</td>
+            <td>Meeting 1</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="brand-checkbox" onchange="toggleBackgroundColor(this)"> 
+              <i class="fa-brands fa-google"></i>
+              Google
+            </td>
+            <td>Google Search</td>
+            <td class="member1">Kundan</td>
+            <td class="Technology">Technology</td>
+            <td>#Google</td>
+            <td>Meeting 2</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="brand-checkbox" onchange="toggleBackgroundColor(this)"><i class="fa-brands fa-microsoft"></i>  Microsoft</td>
+            <td>Launch an advisory Services</td>
+            <td class="member2">Vicky</td>
+            <td class="Productivity">Productivity</td>
+            <td>#Microsoft</td>
+            <td>Meeting 3</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="brand-checkbox" onchange="toggleBackgroundColor(this)"> <i class="fa-brands fa-spotify"></i> Spotify</td>
+            <td>Listen&Enjoy</td>
+            <td class="member1">Mantu</td>
+            <td class="Entertainment">Entertainment</td>
+            <td>#Spotify</td>
+            <td>Meeting 1</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="brand-checkbox" onchange="toggleBackgroundColor(this)"><i class="fa-brands fa-facebook"></i> Facebook</td>
+            <td>Streaming</td>
+            <td class="member">John</td>
+            <td class="Entertainment">Entertainment</td>
+            <td>#Facebook</td>
+            <td>Meeting 1</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="brand-checkbox" onchange="toggleBackgroundColor(this)"> <i class="fa-brands fa-paypal"></i> Paypal</td>
+            <td>Payment App</td>
+            <td class="member1">Vignesh</td>
+            <td class="Transition">Transition</td>
+            <td>#Paypal</td>
+            <td>Meeting 1</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="brand-checkbox" onchange="toggleBackgroundColor(this)"> <i class="fa-brands fa-whatsapp"></i> WhatsApp</td>
+            <td>Instant Messaging</td>
+            <td class="member">Radhika</td>
+            <td class="Communication">Communication</td>
+            <td>#Whatsapp</td>
+            <td>Meeting 1</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="brand-checkbox" onchange="toggleBackgroundColor(this)"> <i class="fa-brands fa-docker"></i> Docker</td>
+            <td>Core Technology</td>
+            <td class="member2">Anjli Verma</td>
+            <td class="Deployment">Deployment </td>
+            <td>#Docker</td>
+            <td>Meeting 1</td>
+            <tr>
+              <td><input type="checkbox" class="brand-checkbox" onchange="toggleBackgroundColor(this)"> <i class="fa-brands fa-react"></i> React</td>
+              <td>Developer</td>
+              <td class="member">KRITE</td>
+              <td class="Deployment">Deployment </td>
+              <td>#React</td>
+              <td>Meeting 1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
